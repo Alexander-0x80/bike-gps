@@ -9,7 +9,6 @@ while True:
     loc = droid.readLocation().result
     if loc == {}:
         print "No Data"
-        loc = droid.getLastKnownLocation().result
     else:
         with open("points.json", "a") as f:
             f.write(json.dumps(loc["gps"]) + "\n")
